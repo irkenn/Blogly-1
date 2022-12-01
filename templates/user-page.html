@@ -1,0 +1,24 @@
+{% block title %}User information{% endblock %}
+
+{% block content %}
+
+<div id="user-div">
+    <div id="image">
+        <img src={{current_user.image_url}} alt="Photo of the user">
+    </div>
+    <div id="username">
+        <h2>{{current_user.first_name}} {{current_user.last_name}}</h2>
+    </div>
+</div>
+<div class="button" id="edit-button">
+    <form action="/users/{{current_user.id}}/edit" method="GET">
+        <button>Edit</button>
+    </form>
+</div>
+<div class="button" id="delete-button">
+    <form action="/users/{{current_user.id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
+</div>
+
+{% endblock %}

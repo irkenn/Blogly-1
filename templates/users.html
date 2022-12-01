@@ -1,0 +1,13 @@
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<h2>Users</h2>
+<ul>
+    {% for i in users %}
+    <a href="/users/{{i.id}}"><li>{{ i.first_name }} {{ i.last_name }}</li></a>
+    {% endfor %}
+</ul>
+<form action="/users/new">
+<button >Add user</button>
+</form>
+{% endblock %}
