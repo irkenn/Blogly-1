@@ -1,0 +1,14 @@
+{% block title %} Edit post {% endblock %}
+
+{% block content %}
+<form action="/posts/{{current_post.id}}/edit" method="POST">
+    <label for="title">Title</label>
+        <input id="title" type="text" name="title" value="{{current_post.title}}">
+    <label for="content">Content</label>
+        <input id="content" type="text" name="content" value="{{current_post.content}}"> 
+    <button>Save</button>
+</form>
+<form action="/posts/{{current_post.id}}" method="GET">
+    <button>Cancel</button>
+</form>
+{% endblock %}

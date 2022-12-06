@@ -21,4 +21,16 @@
     </form>
 </div>
 
+<form action="/users/{{current_user.id}}/posts/new" method="GET">
+    <button>Add post</button>
+</form>
+
+<h2>Checking posts</h2>
+<div id="user-posts-box">
+    {% for post in current_user.posts%}
+    <a href="/posts/{{post.id}}"><li>{{post.title}}</li></a>
+    {% endfor %}
+
+</div>
+
 {% endblock %}

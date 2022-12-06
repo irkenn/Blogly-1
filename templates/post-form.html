@@ -1,0 +1,15 @@
+{% block title %}Add post for {{current_user.first_name}} {{current_user.last_name}}{% endblock %}
+
+{% block content %}
+<form action="/users/{{current_user.id}}/posts/new" method="POST">
+    <label for="title">Title</label>
+        <input id="title" type="text" name="title">
+    <label for="content">Content</label>
+        <input id="content" type="text" name="content"> 
+    <button>Add</button>
+</form>
+<form action="/users/{{current_user.id}}" method="GET">
+    <button>Cancel</button>
+</form>
+
+{% endblock %}

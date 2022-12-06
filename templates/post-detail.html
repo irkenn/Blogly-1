@@ -1,0 +1,21 @@
+{% block title %}Post information{% endblock %}
+
+{% block content %}
+
+<div>
+    <h2>{{current_post.title}}</h2>
+    <p>{{current_post.content}}</p>
+    <h3>By {{current_user.first_name}} {{current_user.last_name}}</h3>
+</div>
+<form action="/users/{{current_user.id}}" method="GET">
+    <button>Cancel</button>
+</form>
+<form action="/posts/{{current_post.id}}/edit" method="GET">
+    <button>Edit post</button>
+</form>
+<form action="/posts/{{current_post.id}}/delete" method="POST">
+    <button>Delete post</button>
+</form>
+
+
+{% endblock %}

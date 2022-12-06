@@ -37,7 +37,6 @@ class UserViewsTestCase(TestCase):
         db.session.rollback()
     
 
-
     def test_add_user(self):
         with app.test_client() as client:
             d = {"first_name": "Two", "last_name": "Dos", "image_url": "Wee"}
@@ -70,3 +69,8 @@ class UserViewsTestCase(TestCase):
 
             self.assertEqual(response.status_code, 200)
             self.assertIn(self.user.first_name, html)            
+
+ 
+
+
+    
