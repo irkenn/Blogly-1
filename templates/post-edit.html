@@ -1,12 +1,21 @@
 {% block title %} Edit post {% endblock %}
 
 {% block content %}
+<h2>Edit Post</h2>
 <form action="/posts/{{current_post.id}}/edit" method="POST">
     <label for="title">Title</label>
         <input id="title" type="text" name="title" value="{{current_post.title}}">
     <label for="content">Content</label>
         <input id="content" type="text" name="content" value="{{current_post.content}}"> 
     <button>Save</button>
+    {% if current_post.tags%}
+        <h3>Current tags for the post:</h3>
+        {% for tag in current_post.tags%}
+            <label for="{{tag.id}}">{{tag.name}}</label>
+                <input type="checkbox" id="{{tag.id}}" name="{{tag.id}}" checked>
+        {% endfor %}
+    {% endif %}
+
 </form>
 <form action="/posts/{{current_post.id}}" method="GET">
     <button>Cancel</button>

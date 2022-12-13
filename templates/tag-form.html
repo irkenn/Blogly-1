@@ -1,0 +1,13 @@
+{% block title %}New Tag{% endblock %}
+
+{% block content %}
+<form action="/tags/new" method="POST">
+    <label for="name">First Name</label>
+        <input type="text" name="name" placeholder="Enter a name for the tag">
+    <button>Add</button>
+</form>
+<form action="/tags" method="GET">
+    <button>Cancel</button>
+</form>
+
+{% endblock %}

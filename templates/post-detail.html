@@ -17,5 +17,9 @@
     <button>Delete post</button>
 </form>
 
-
+<ul>
+    {% for tag in current_post.tags%}
+        <li>{{tag.name}}</li>
+    {% endfor %}
+</ul>
 {% endblock %}

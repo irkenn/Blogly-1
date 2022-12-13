@@ -1,0 +1,16 @@
+{% block title %}Show tag{% endblock %}
+
+{% block content %}
+<h2>{{current_tag.name}}</h2>
+<ul>
+    {% for post in current_tag.posts %}
+    <a href="/posts/{{post.id}}"><li>{{post.title}}</li></a>
+    {% endfor %}
+</ul>
+<form action="/tags/{{current_tag.id}}/edit" method="GET">
+    <button >Edit tag</button>
+</form>
+<form action="/tags/{{current_tag.id}}/delete" method="POST">
+    <button>Delete tag</button>
+</form>
+{% endblock %}
